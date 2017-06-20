@@ -5,7 +5,7 @@
 //images need to be random and not repeat
 //page needs to refresh w/o refresh
 //log responses: each of the decisions, total # of clicks, how many times a picture is viewed, % of times a pic was clicked aka total clicks over total times viewed.
-var productNames = ['baby-sweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass'];
 
 var productImageOne = '';
 var productImageTwo = '';
@@ -16,15 +16,15 @@ var responseParent = document.getElementById('response');
 
 function setup() {
   //what does setup do
-  productImageOne = generateRandomProduct();
-  productImageTwo = generateRandomProduct();
-  productImageThree = generateRandomProduct();
+  productImageOne = generateRandomProduct(!productImageTwo, !productImageThree);
+  productImageTwo = generateRandomProduct(!productImageOne, !productImageTwo);
+  productImageThree = generateRandomProduct(!productImageOne, !productImageTwo);
   renderProductName(productNameOne);
-  renderProductImage(productImageOne);
+  renderProductImages(productImageOne);
   renderProductName(productNameTwo);
-  renderProductImage(productImageTwo);
+  renderProductImages(productImageTwo);
   renderProductName(productNameThree);
-  renderProductImage(productImageThree);
+  renderProductImages(productImageThree);
 }
 
 setup();
@@ -113,7 +113,7 @@ function renderProductName (productName) {
   productNameParent.append('r');
 }
 
-function renderProductImage (productName) {
+function renderProductImages (productImages) {
   var img = document.createElement('img');
   img.setAttribute('src', 'img/' + productName + '.jpg' );
   img.setAttribute('id', productName);
