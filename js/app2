@@ -1,10 +1,5 @@
 'use strict';
-//array of products
-//loop 25 times and then stop
-//each page has 3 images - side by side
-//images need to be random and not repeat
-//page needs to refresh w/o refresh
-//log responses: each of the decisions, total # of clicks, how many times a picture is viewed, % of times a pic was clicked aka total clicks over total times viewed.
+
 var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass'];
 
 var productImageOne = '';
@@ -50,8 +45,8 @@ var wineGlass = 0;
 
 productImagesParent.addEventListener('render', function(render) {
   var display = event.target.getAttribute('id');
-  //same logic as below? Find a way to loop this to make code dry
 })
+
 productImagesParent.addEventListener('click', function(event){
   var answer = event.target.getAttribute('id');
   console.log('id');
