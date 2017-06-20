@@ -10,6 +10,7 @@
     b) how many times a picture is viewed
     c) % of times a picture was clicked when it was shown
       - a/b.
+    d) users will select three random photos from the image directory and display them side-by-side-by-side in the browser window
 
 ### UserAll (3-4)
 -bus riders
