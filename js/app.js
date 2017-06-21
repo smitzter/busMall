@@ -137,6 +137,7 @@ function generateRandomProduct() {
 //   h3.textContent = productName;
 //   productNameParent.append('h3');
 // }
+//modeled from jon
 function buttonLogic() {
   var productName = [], answer = [];
   for (var i = 0; i < productNames.length; i++){
@@ -198,7 +199,7 @@ function chart () {
   var canvas = document.getElementById('chart');
   var ctx = canvas.getContext('2d');
 }
-
+//modeled from class
 var chart = new Chart(ctx, {
   type: 'bar',
 
