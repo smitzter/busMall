@@ -2,6 +2,9 @@
 
 var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass'];
 
+var productNameOne = '';
+var productNameTwo = '';
+var productNameThree = '';
 var productImageOne = '';
 var productImageTwo = '';
 var productImageThree = '';
@@ -10,6 +13,7 @@ var productImagesParent = document.getElementById('productImages');
 var responseParent = document.getElementById('response');
 
 function setup() {
+  //what does setup do
   productImageOne = generateRandomProduct(!productImageTwo, !productImageThree);
   productImageTwo = generateRandomProduct(!productImageOne, !productImageTwo);
   productImageThree = generateRandomProduct(!productImageOne, !productImageTwo);
@@ -20,7 +24,7 @@ function setup() {
   renderProductName(productNameThree);
   renderProductImages(productImageThree);
 }
-
+//automate var from Array
 setup();
 var babySweep = 0;
 var bag = 0;
@@ -45,8 +49,8 @@ var wineGlass = 0;
 
 productImagesParent.addEventListener('render', function(render) {
   var display = event.target.getAttribute('id');
+  //same logic as below? Find a way to loop this to make code dry
 })
-
 productImagesParent.addEventListener('click', function(event){
   var answer = event.target.getAttribute('id');
   console.log('id');
