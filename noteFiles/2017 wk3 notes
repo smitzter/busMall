@@ -32,11 +32,7 @@ arrayof Objects.push(new MakeImages(imageNames[i]));
 //removeChild
 //reset src
 //hide image - lots of hidden elements clog up page.
-//function ProductName(name, file path) {
-this.name = name,
-this.filepath = filepath,
-this.click
-}
+
 
 //daniel
 

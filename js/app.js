@@ -1,11 +1,11 @@
 'use strict';
 
 // for (var p = 0; p < productNames.length; p++)
-var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass' ]
+var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissors', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass' ]
 // }
 console.log(productNames);
 
-var productName = '';
+var productName = [];
 var productImage1 = '';
 var productImage2 = '';
 var productImage3 = '';
@@ -15,7 +15,7 @@ var productImage3 = '';
 // for (var i=0; i < )
 var attempts = 0;
 var maxAttempts = 25;
-var babySweep = 0;
+var babySweep = new ProductName('babySweep');
 var bag = 0;
 var banana = 0;
 var bathroom = 0;
@@ -28,7 +28,7 @@ var dogDuck = 0;
 var dragon = 0;
 var pen = 0;
 var petSweep = 0;
-var scissor = 0;
+var scissors = 0;
 var shark = 0;
 var tauntaun =0;
 var unicorn = 0;
@@ -62,11 +62,16 @@ function setup() {
 }
 setup();
 renderResponse();
+data();
+buttonLogic();
+
 
 productImageParent.addEventListener('render', function(render) {
   var display = event.target.getAttribute('id');
+  render(display);
   //same logic as below? Find a way to loop this to make code dry
 });
+
 
 productImageParent.addEventListener('click', function(event) {
   if (attempts === maxAttempts) {
@@ -103,7 +108,7 @@ productImageParent.addEventListener('click', function(event) {
   } else if (answer === [12]) {
     petSweep++;
   } else if (answer === [13]) {
-    scissor++;
+    scissors++;
   } else if (answer === [14]) {
     shark++;
   } else if (answer === [15]) {
@@ -125,6 +130,12 @@ productImageParent.addEventListener('click', function(event) {
   }
 });
 
+function ProductName(name, click, shown) {
+  this.name = name,
+  this.click = 0,
+  this.shown = 0
+}
+
 function generateRandomProduct() {
   var index = Math.floor(Math.random() * productNames.length);
   return productNames[index];
@@ -139,25 +150,31 @@ function generateRandomProduct() {
 // }
 //modeled from jon
 function buttonLogic() {
-  var productName = [], answer = [];
+  productName = [], answer = [];
   for (var i = 0; i < productNames.length; i++){
-    productName.push(productName[i].name);
+    productName.push(productNames[i].name);
     answer.push(productNames[i]).clicked;
   }
+}
 //return logic
-  function data() {
-    document.getElementById('data');
-    for (var i = 0; i < productNames.length; i++){
-      productName.push(productName[i].name);
-      answer.push(productNames[i]).clicked;
-    }
+function data() {
+  // document.getElementById('data');
+  for (var i = 0; i < productNames.length; i++){
+    productName.push(productNames[i].name);
+    answer.push(productNames[i]).clicked;
   }
+}
 
-//
-// for (var n = 0; n < productNames.length; n++) {
-//   arrayofObjects.push(ProductName = productNames[n]);
-// }
-// console.log(ProductName);
+for(var i = 0; i < localStorage.length; i++){
+  console.log(localStorage.key(i));
+}
+localStorage.setItem('clicked', 'data');
+localStorage.key();
+
+for (var n = 0; n < productNames.length; n++) {
+  arrayofObjects.push(ProductName = productNames[n]);
+}
+console.log(ProductName);
 
 // for (var i = 0; i < 3; i++) {
 //   arrayofObjects.push(productImage + i = ProductName);
@@ -166,9 +183,11 @@ function updateProductName (productName) {
   productNameElement.textContent = productName;
 }
 
+updateProductName();
+
 function renderProductImage (productNames) {
   var img = document.createElement('img');
-  img.setAttribute('src', 'img/' + productName + '.jpg' );
+  img.setAttribute('src', 'img/' + productNames + '.jpg' );
   img.setAttribute('id', productNames);
   productImageParent.append(img);
 }
@@ -180,20 +199,22 @@ console.log(productNames);
 
 //
 function renderResponse(response) {
-  responseElement.textContent = response;
-  // var p = document.createElement('p');
-  // p.textContent = response;
-  // responseParent.append(p);
+  // responseElement.textContent = response;
+  var p = document.createElement('p');
+  p.textContent = response;
+  responseParent.append(p);
 }
+
 //answers but needs to reiterate
 function updateAnswer () {
   answerElement.textContent = answer;
 }
+updateAnswer();
 //counts down attempts to 0
 function updateAttempts () {
   attmeptsElement.textcontent = maxAttempts - attempts;
 }
-
+updateAttempts();
 ////////////////////////////////
 function chart () {
   var canvas = document.getElementById('chart');
@@ -236,3 +257,4 @@ function draw() {
 
   ctx.fillText('Words', 10, 100);
 }
+draw();
