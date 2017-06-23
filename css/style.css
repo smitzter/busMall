@@ -1,0 +1,83 @@
+* {
+  background-color: #000000;
+  color: #ff0000;
+}
+
+@font-face {
+  font-family: 'BlackCasper':
+  src: url('fonts/BlackCasper.ttf');
+  format('truetype');
+}
+
+h1 {
+  font-family: 'BlackCasper', Georgia, serif;
+
+}
+
+.animation {
+  width: 400px;
+  height: 400px;
+}
+@keyframes blinkAnimation {
+  0% {
+    /*opacity: 1.0;*/
+    color: #000000;
+  }
+  50% {
+    /*opacity: 0;*/
+    color: #ffffff;
+  }
+  100% {
+    /*opacity: 1.0;*/
+    color: #ff0000;
+  }
+}
+
+.blink {
+  animation-name: blinkAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(3);
+  animation-duration: 500ms;
+}
+
+@keyframes bounce {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: 70%;
+    top: 25%;
+  }
+  50% {
+    left: 0%;
+    top: 50%;
+  }
+  75% {
+    left: 70%;
+    top: 25%;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+.animationElement {
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: bounce, blink;
+  width: 20%;
+  height: 10%;
+  position: relative;
+}
+
+img:first-child {
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: bounce, blink;
+  position: absolute;
+  z-index: 10;
+}
