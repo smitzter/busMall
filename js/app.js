@@ -28,7 +28,7 @@ localData();
 localStorage();
 retrieveData();
 ///Constuctor functions///
-//array to feed constructor function: (imageNmae, location, views, clicks) MakeImage calls at end
+//array to feed constructor function: (imageName, location, views, clicks) MakeImage calls at end
 function MakeImage (name, filepath, timesShown, clicks) {
   this.name = name,
   this.filepath = filepath,
@@ -92,45 +92,45 @@ function renderProductImage (products, imgAll) {
   x.value = 'filepath';
   x.setAttributeNode(x);
   console.log(node.getAttribute('src'));
+  function countViews(event) {
+    var viewImg;
+    switch (event.target.id) {
+    case'':
+      viewImg = pushImg[newImg[0]];
+      break;
+    }
+  }
+  //listener for clicks///
+  function countClicks(event) {
+    var clickedImg;
+    switch (event.target.id) {
+    case'img1':
+      clickedImg = pushImg[newImg[0]];
+      break;
+    }
+  }
+  function countClicks(event) {
+    var clickedImg;
+    switch (event.target.id) {
+    case'img2':
+      clickedImg = pushImg[newImg[0]];
+      break;
+    }
+  }
+  function countClicks(event) {
+    var clickedImg;
+    switch (event.target.id) {
+    case'img3':
+      clickedImg = pushImg[newImg[0]];
+      break;
+    }
+  }
+
 }
 
-
+//put it in the render functions
 ///listener for views///
-function countViews(event) {
-  var viewImg;
-  switch (event.target.id) {
-  case'':
-    viewImg = pushImg[newImg[0]];
-    break;
-  }
-}
-//listener for clicks///
-function countClicks(event) {
-  var clickedImg;
-  switch (event.target.id) {
-  case'img1':
-    clickedImg = pushImg[newImg[0]];
-    break;
-  }
-}
-function countClicks(event) {
-  var clickedImg;
-  switch (event.target.id) {
-  case'img2':
-    clickedImg = pushImg[newImg[0]];
-    break;
-  }
-}
-function countClicks(event) {
-  var clickedImg;
-  switch (event.target.id) {
-  case'img3':
-    clickedImg = pushImg[newImg[0]];
-    break;
-  }
-}
-// somevar.ImageAll.addEventListener('clicks', someobj.somemethod);
-// somvar.displayImages();
+
 //countdown attempts
 function updateAttempts () {
   attemptsElement.textcontent = maxAttempts - attempts;

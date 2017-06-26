@@ -1,0 +1,125 @@
+'use strict';
+
+var productNames = ['babySweep', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair','cthulhu', 'dogDuck', 'dragon', 'pen', 'petSweep', 'scissor', 'shark', 'tauntaun', 'unicorn', 'usb', 'waterCan', 'wineGlass'];
+
+var productNameOne = '';
+var productNameTwo = '';
+var productNameThree = '';
+var productImageOne = '';
+var productImageTwo = '';
+var productImageThree = '';
+var productNameParent = document.getElementById('productName');
+var productImagesParent = document.getElementById('productImages');
+var responseParent = document.getElementById('response');
+
+function setup() {
+  //what does setup do
+  productImageOne = generateRandomProduct(!productImageTwo, !productImageThree);
+  productImageTwo = generateRandomProduct(!productImageOne, !productImageTwo);
+  productImageThree = generateRandomProduct(!productImageOne, !productImageTwo);
+  renderProductName(productNameOne);
+  renderProductImages(productImageOne);
+  renderProductName(productNameTwo);
+  renderProductImages(productImageTwo);
+  renderProductName(productNameThree);
+  renderProductImages(productImageThree);
+}
+//automate var from Array
+setup();
+var babySweep = 0;
+var bag = 0;
+var banana = 0;
+var bathroom = 0;
+var boots = 0;
+var breakfast = 0;
+var bubblegum = 0;
+var chair = 0;
+var cthulhu = 0;
+var dogDuck = 0;
+var dragon = 0;
+var pen = 0;
+var petSweep = 0;
+var scissor = 0;
+var shark = 0;
+var tauntaun =0;
+var unicorn = 0;
+var usb = 0;
+var waterCan = 0;
+var wineGlass = 0;
+
+productImagesParent.addEventListener('render', function(render) {
+  var display = event.target.getAttribute('id');
+  //same logic as below? Find a way to loop this to make code dry
+})
+productImagesParent.addEventListener('click', function(event){
+  var answer = event.target.getAttribute('id');
+  console.log('id');
+  if (answer != []) {
+    alert('please click on image')
+  } if  (answer === [0]) {
+    console.log(babySweep +=  1);
+  } else if (answer === [1]) {
+    console.log(bag += 1);
+  } else if (answer === [2]) {
+    console.log(banana += 1);
+  } else if (answer === [3]) {
+    console.log(bathroom += 1);
+  } else if (answer === [4]) {
+    console.log(boots += 1);
+  } else if (answer === [5]) {
+    console.log(breakfast += 1);
+  } else if (answer === [6]) {
+    console.log(bubblegum += 1);
+  } else if (answer === [7]) {
+    console.log(chair += 1);
+  } else if (answer === [8]) {
+    console.log(cthulhu += 1);
+  } else if (answer === [9]) {
+    console.log(dogDuck += 1);
+  } else if (answer === [10]) {
+    console.log(dragon += 1);
+  } else if (answer === [11]) {
+    console.log(pen += 1);
+  } else if (answer === [12]) {
+    console.log(petSweep += 1);
+  } else if (answer === [13]) {
+    console.log(scissors += 1);
+  } else if (answer === [14]) {
+    console.log(shark += 1);
+  } else if (answer === [15]) {
+    console.log(tauntaun += 1);
+  } else if (answer === [16]) {
+    console.log(unicorn += 1);
+  } else if (answer === [17]) {
+    console.log(usb += 1);
+  } else if (answer === [18]) {
+    console.log(waterCan += 1);
+  } else if (answer === [19]) {
+    console.log(wineGlass += 1);
+  } else {
+      alert('please click on image')
+  };
+
+function generateRandomProduct() {
+  var index = Math.floor(Math.random() * productNames.length);
+  return productNames[index];
+}
+
+function renderProductName (productName[0]) {
+  var r = document.createElement('r');
+  r.textContent = productName;
+  productNameParent.append('r');
+}
+
+function renderProductImages (productImages) {
+  var img = document.createElement('img');
+  img.setAttribute('src', 'img/' + productName[0] + '.jpg' );
+  img.setAttribute('id', productName[0]);
+  productImagesParent.append(img);
+}
+
+function renderResponse (response) {
+  var p = document.createElement('p');
+  p.textContent = response;
+  responseParent.append(p);
+}
