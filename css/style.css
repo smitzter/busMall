@@ -33,12 +33,12 @@ h1 {
   }
 }
 
-.blink {
+/*.blink {
   animation-name: blinkAnimation;
   animation-iteration-count: infinite;
   animation-timing-function: steps(3);
   animation-duration: 500ms;
-}
+}*/
 
 @keyframes bounce {
   0% {
@@ -63,7 +63,7 @@ h1 {
   }
 }
 
-.animationElement {
+/*.animationElement {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -71,13 +71,13 @@ h1 {
   width: 20%;
   height: 10%;
   position: relative;
-}
+}*/
 
-img:first-child {
+/*img:first-child {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-name: bounce, blink;
   position: absolute;
   z-index: 10;
-}
+}*/
